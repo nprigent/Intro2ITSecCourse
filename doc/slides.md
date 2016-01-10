@@ -83,6 +83,19 @@
 
 - _Security Measures_, being technical or not, are deployed and maintained to enforce the security policy.  
 
+## Security measures
+
+Three types of security measures can be taken : 
+
+- _Physical security measures_, that consist in physically controlling the access to components of the system. 
+
+- _Organizational security measures_, that consist in the administrative procedures that are imposed to the users and organizations w.r.t. security. 
+
+- _Logical security measures_, that consist in all the security measures that are implemented as pieces of software. 
+
+While _logical security measures_ are the most common parts of IT security, the other two must also be taken seriously. 
+
+
 ## Security properties : C.I.A. 
 
 Security policy is generally expressed in terms of three security properties : 
@@ -138,6 +151,12 @@ They are known as the C.I.A. properties.
 
 - It is commonly admitted that is is not possible to make a system free of vulnerabilities. 
 
+
+## Security is a chain
+
+![And the attacker will focus on the weakest link](broken-link.jpg)
+
+
 ## Security mechanisms
 
 Security mechanisms help enforce the security policy by reducing vulnerabilities so as to ensure security properties. 
@@ -150,11 +169,10 @@ They can act on various parts of the system :
 
 - On the services, 
 
-- On the data, 
-
-- On the user. 
+- On the data. 
 
 _In-depth security_ consists in combining multiple security mechanisms in such a way that an attacker that succeeds in circumventing one of them will not reach his or her goals. Therefore, there is no _single point of failure_. 
+
 
 ## Network security
 
@@ -180,6 +198,126 @@ Many tools and mechanisms are available to that end.
 
 ## Using VPN to secure communications between distant sub-networks 
 
+- Companies are now located in multiple places. 
+
+- They still need to share information and services whatever they are located. 
+
+- Virtual Private Networks technologies such as IPsec for instance rely on 
+cryptography to allow the various sub-networks to communicate securely and 
+transparently, as if they were in fact a single network. 
+
+## Protecting HTTP communications with HTTPS
+
+- The web is not ubiquitous and many services can be obtained through it (information, social networks, banking, etc.) 
+
+- Confidentiality and integrity of communications is necessary but is not provided by HTTP itself. 
+
+- HTTPS is a modification of the HTTP protocol that ensures authentication of the server (and possibly of the client) as well as confidentiality and integrity of the communications. 
+
+- It is regularly updated so as to correct vulnerabilities. 
+
+## Firewalls
+
+- Firewalls implement access control on networks by filtering the messages 
+that go through them. 
+
+- Historically, they looked at IP addresses and TCP/UDP ports to decide if a packet was authorized. 
+
+- Since everything now uses the web, WAF (Web Application Firewalls) now look at the content of web requests to enforce access control. 
+
+## Devices security
+
+- IT devices are numerous: personal computers, mobile phones, smart-everything, cars, but also servers and routers for instance. 
+
+- While they are very different in size and shapes, ensuring their security is a matter of ensuring the confidentiality, integrity and availability of the services and pieces of informations they manage. 
+
+- They are however now very complex systems for which ensuring perfect 
+security is probably not possible. 
+
+## Passwords, PIN codes and fingerprints
+
+- The role of passwords, PIN codes and fingerprints is to ensure that the person 
+using the device is really who he or she pretends to be. 
+
+- Password and PIN codes must provide sufficient complexity so as to not be guessed to easily. 
+
+- It is now considered that a good password is at least 12 characters long, with lower and upper letters, numbers and special chars. 
+
+- Since PIN codes cannot be that complex, devices implementing them should allow only a very small number of attempts. 
+
+- It has been showed that fingerprint scanners can often be circumvented. 
+
+- Your fingerprint also cannot be renewed :-). 
+
+## What happens when you device is stolen ? 
+
+![U.S. airports report close to 637,000 laptops lost each year](laptop-airport.jpg)
+
+## Full disk encryption
+
+- When a laptop is stolen, an attacker can do whatever he/she pleases with it. 
+
+- Especially, he or she can remove the hard drive and access all the data it contains by mounting it as an external hard drive on his or her own computer. 
+
+- Full disk encryption allows to cryptographically protect the whole disk against this. 
+
+- In practice, it is possible to require a password or an external device to 
+boot the system. 
+
+## Malicious software
+
+- The purpose of malicious software is to perform malicious actions on the victim's computer. 
+
+- _Virus_ are pieces of software that copy themselves in the other applications when the victim runs them. 
+
+- _Worms_ spread over the network by exploiting network application vulnerabilities. 
+
+- _Trojan Horses_ look like useful applications but perform malicious actions when launched or when some conditions are fulfilled. 
+
+- _Phishing_ is a malicious activity during which the attacker sends e-mails 
+to victims so as to make them perform some actions that will compromise their system (run a malicious program, connect to a malicious web site, etc.)
+
+## Anti-virus software
+
+- _Stricto sensu_, an anti-virus software analyze the applications on the computer to detect if they contain pieces of malicious software. 
+
+- They now offer much more features, such as scanning the received e-mails, 
+verifying that the applications are up to date, etc. 
+
+- While some of them are quite efficient, none of them can be considered as bullet-proof. 
+
+## Application vulnerabilities
+
+- Applications can also contain implementation vulnerabilities, i.e. some mistakes in programming that allow an attacker to perform malicious actions. 
+
+- Many kinds of applications vulnerabilities exist. 
+
+- They depend on the programming language that was used to develop the application.
+
+- Operating systems being applications, they can contain application vulnerabilities. 
+
+- In practice, it is almost impossible to produce an application that is free from implementation vulnerabilities. 
+
+- Therefore, the best answer is to apply patches as soon as they are published. 
+
+## Securing services
+
+Since services are very different one from the other, there can't be any single way to secure them all. However, principles are always the same: 
+
+- Careful management of users authentication. 
+
+- Configuration of the various authorization with minimum privilege for each user. 
+
+- Frequent deployment of patches. 
+
+## Securing data
+
+Data that is stored or transmitted on the network can basically be protected through to means : 
+
+- Physical isolation of the storage of the network. 
+
+- Protecting its integrity and confidentiality with cryptography. 
+
 
 ## Secure everything ? 
 
@@ -195,9 +333,28 @@ Many tools and mechanisms are available to that end.
 
 - Security measures must focus on the relevant _risks_. 
 
-## Security is a chain
 
-![And the attacker will focus on the weakest link](broken-link.jpg)
+## EBIOS, a risk analysis methodology
+
+A _risk analysis_ is performed in order to define what should be secured. 
+
+EBIOS (_Expression des Besoins et Identification des Objectifs de Sécurité_) is a risk analysis methodology that follows the following procedure : 
+
+- Definition of the context and perimeter
+
+- Unwanted events analysis
+
+- Threat scenarios analysis
+
+- Risks analysis, based on the impact and probability of occurrence 
+
+- Security measures analysis
+
+## Case study: Your Digital Life
+
+In order to understand the EBIOS methodology, we are going to perform a risk 
+analysis on the following subject: _Your Digital Life_. 
 
 
-## What do you fear ? 
+
+
