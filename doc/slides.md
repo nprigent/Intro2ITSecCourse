@@ -67,9 +67,9 @@
 
 ## What do we mean by ``security'' ? 
 
-- _Security_ consists in enforcing that only _authorized entities_ can perform _certain tasks_ 
+- _Security_ consists in enforcing that only _authorized entities_ can perform _certain tasks._ 
 
-- The _perimeter_ of an information system is made of a set of devices, pieces of software and data and users. 
+- The _perimeter_ of an information system is made of a set of devices, pieces of software, data and users. 
 
 - Every information system is placed under an _authority_ that decides what is authorized and what is not. 
 
@@ -77,11 +77,11 @@
 
 - The _Security Policy_ defines formally or informally what is authorized, and what is not. 
 
-- It can be based on a _white list_ (everything that is not explicitly authorized in the list if forbidden) or on a _black list_ (everything that is not in the list is authorized). 
+- It can be based on a _white list_ (everything that is not explicitly authorized in the list if forbidden) or on a _black list_ (everything that is in the list is forbidden). 
 
-- Enforcing the security of an information system consists in ensuring that the security policy is complete enough and that it is enforced. 
+- Enforcing the security of an information system consists in ensuring that the security policy is appropriate and enforced. 
 
-- _Security Measures_, being technical or not, are deployed and maintained to enforce the security policy.  
+- _Security Measures_ are deployed and maintained to enforce the security policy.  
 
 ## Security measures
 
@@ -98,13 +98,13 @@ While _logical security measures_ are the most common parts of IT security, the 
 
 ## Security properties : C.I.A. 
 
-Security policy is generally expressed in terms of three security properties : 
+The security policy is generally expressed in terms of three security properties : 
 
-- _Confidentiality_, that means that no unauthorized entity can access a given piece of information or service. 
+- _Confidentiality_, that means that an unauthorized entity cannot access a given piece of information or service. 
 
-- _Integrity_, that ensures that no unauthorized entity can modify a given piece of information or service. 
+- _Integrity_, that ensures that an unauthorized entity cannot modify a given piece of information or service. 
 
-- _Availability_, that ensures that no unauthorized entity can prevent a legitimate one from accessing a given piece of information or service. 
+- _Availability_, that ensures that an unauthorized entity cannot prevent a legitimate one from accessing a given piece of information or service. 
 
 They are known as the C.I.A. properties. 
 
@@ -120,7 +120,7 @@ They are known as the C.I.A. properties.
 
 - Authentication consists in ensuring that an entity is who he, she or it pretends to be. 
 
-- In the real world, your ID your driver's license plays that role. 
+- In the real world, your ID or your driver's license plays that role. 
 
 - In the digital world, you can prove your identity by using something you know (a password), something you have (a credit card), something you are (your fingerprints for instance). 
 
@@ -134,11 +134,11 @@ They are known as the C.I.A. properties.
 
 - It therefore enforces the security policy, especially in terms of confidentiality and integrity. 
 
-- It relies heavily on authentication 
+- It relies heavily on authentication.
 
 - It can be coarse or fine-grained. 
 
-## Vulnerability, threat agents, attack
+## Vulnerability, threat agent, attack
 
 - A _vulnerability_ is a weakness in a part of the system that allows an attacker to circumvent the security policy. It can for instance be the fact that a file sharing server does not perform any access control while containing confidential information. 
 
@@ -178,9 +178,9 @@ _In-depth security_ consists in combining multiple security mechanisms in such a
 
 Network security consists in : 
 
-- controlling the access to the networks, 
+- controlling the access to the network, 
 
-- protecting the communications, 
+- protecting communications, 
 
 - filtering communications that enter and go out the network. 
 
@@ -188,11 +188,11 @@ Many tools and mechanisms are available to that end.
 
 ## Protecting WiFi networks
 
-- WiFi access points allow devices to connect wirelessly to an network and possibly to the Internet. 
+- WiFi access points allow devices to connect wirelessly to a network and possibly to the Internet. 
 
-- When no security mechanisms is implemented, anyone can connect to the network and anyone can eavesdrop communications. 
+- When no security mechanism is implemented, anyone can connect to the network,  eavesdrop communications and inject packets. 
 
-- WEP was first propose to prevent these. It used cryptography to enforce access control to the network and confidentiality of communications.
+- WEP was first propose to prevent these. It used cryptography to enforce access control to the network as well as confidentiality and integrity of communications.
 
 - Because WEP had its own vulnerabilities (due to bad use of cryptography), it was replaced by WPA. 
 
@@ -200,7 +200,7 @@ Many tools and mechanisms are available to that end.
 
 - Companies are now located in multiple places. 
 
-- They still need to share information and services whatever they are located. 
+- They still need to share information and services wherever they are located. 
 
 - Virtual Private Networks technologies such as IPsec for instance rely on 
 cryptography to allow the various sub-networks to communicate securely and 
@@ -208,7 +208,7 @@ transparently, as if they were in fact a single network.
 
 ## Protecting HTTP communications with HTTPS
 
-- The web is not ubiquitous and many services can be obtained through it (information, social networks, banking, etc.) 
+- Many services can now be obtained through the web (information, social networks, banking, etc.) 
 
 - Confidentiality and integrity of communications is necessary but is not provided by HTTP itself. 
 
@@ -223,27 +223,26 @@ that go through them.
 
 - Historically, they looked at IP addresses and TCP/UDP ports to decide if a packet was authorized. 
 
-- Since everything now uses the web, WAF (Web Application Firewalls) now look at the content of web requests to enforce access control. 
+- WAF (Web Application Firewalls) look at the content of web requests to enforce access control. 
 
 ## Devices security
 
 - IT devices are numerous: personal computers, mobile phones, smart-everything, cars, but also servers and routers for instance. 
 
-- While they are very different in size and shapes, ensuring their security is a matter of ensuring the confidentiality, integrity and availability of the services and pieces of informations they manage. 
+- While they are very different in size and shapes, ensuring their security is a matter of ensuring the confidentiality, integrity and availability of the services and pieces of informations they contain and access. 
 
-- They are however now very complex systems for which ensuring perfect 
-security is probably not possible. 
+- Modern devices are very complex systems for which ensuring perfect security is probably not possible. 
 
 ## Passwords, PIN codes and fingerprints
 
 - The role of passwords, PIN codes and fingerprints is to ensure that the person 
 using the device is really who he or she pretends to be. 
 
-- Password and PIN codes must provide sufficient complexity so as to not be guessed to easily. 
+- Password and PIN codes must provide sufficient complexity so as not to be guessed too easily. 
 
-- It is now considered that a good password is at least 12 characters long, with lower and upper letters, numbers and special chars. 
+- It is now considered that a good password is at least 12 characters long, with lowercase and uppercase letters, numbers and special characters. 
 
-- Since PIN codes cannot be that complex, devices implementing them should allow only a very small number of attempts. 
+- Since PIN codes cannot be that complex, devices implementing them generally allow only a very small number of attempts. 
 
 - It has been showed that fingerprint scanners can often be circumvented. 
 
@@ -261,8 +260,8 @@ using the device is really who he or she pretends to be.
 
 - Full disk encryption allows to cryptographically protect the whole disk against this. 
 
-- In practice, it is possible to require a password or an external device to 
-boot the system. 
+- In practice, full-disk encryption generally requires a password or an external 
+device to boot the system. 
 
 ## Malicious software
 
@@ -274,25 +273,24 @@ boot the system.
 
 - _Trojan Horses_ look like useful applications but perform malicious actions when launched or when some conditions are fulfilled. 
 
-- _Phishing_ is a malicious activity during which the attacker sends e-mails 
-to victims so as to make them perform some actions that will compromise their system (run a malicious program, connect to a malicious web site, etc.)
+- _Phishing_ is a malicious activity during which the attacker sends malicious 
+e-mails to victims so as to make them perform some actions that will compromise 
+their system (run a malicious program, connect to a malicious web site, etc.)
 
 ## Anti-virus software
 
-- _Stricto sensu_, an anti-virus software analyze the applications on the computer to detect if they contain pieces of malicious software. 
+- _Stricto sensu_, anti-virus software analyzes the applications on the computer to detect if they contain pieces of malicious software. 
 
 - They now offer much more features, such as scanning the received e-mails, 
 verifying that the applications are up to date, etc. 
 
-- While some of them are quite efficient, none of them can be considered as bullet-proof. 
+- While some of them are quite efficient, none of them can be considered bullet-proof. 
 
 ## Application vulnerabilities
 
-- Applications can also contain implementation vulnerabilities, i.e. some mistakes in programming that allow an attacker to perform malicious actions. 
+- Applications can also contain implementation vulnerabilities, i.e. some programming mistakes that allow an attacker to perform malicious actions. 
 
-- Many kinds of applications vulnerabilities exist. 
-
-- They depend on the programming language that was used to develop the application.
+- Many kinds of application vulnerabilities exist. 
 
 - Operating systems being applications, they can contain application vulnerabilities. 
 
@@ -302,11 +300,11 @@ verifying that the applications are up to date, etc.
 
 ## Securing services
 
-Since services are very different one from the other, there can't be any single way to secure them all. However, principles are always the same: 
+Since services are very different one from the others, there can't be any single way to secure them all. However, principles are always the same: 
 
 - Careful management of users authentication. 
 
-- Configuration of the various authorization with minimum privilege for each user. 
+- Configuration of the various authorization with minimum privileges for each user. 
 
 - Frequent deployment of patches. 
 
@@ -336,17 +334,17 @@ Data that is stored or transmitted on the network can basically be protected thr
 
 ## EBIOS, a risk analysis methodology
 
-A _risk analysis_ is performed in order to define what should be secured. 
+A _risk analysis_ is performed in order to define what should be protected, and against what. 
 
 EBIOS (_Expression des Besoins et Identification des Objectifs de Sécurité_) is a risk analysis methodology that follows the following procedure : 
 
-- Definition of the context and perimeter
+- Definition of context and perimeter
 
 - Unwanted events analysis
 
 - Threat scenarios analysis
 
-- Risks analysis, based on the impact and probability of occurrence 
+- Risks analysis, based on the impact and probability of occurrence of unwanted events
 
 - Security measures analysis
 
@@ -354,7 +352,3 @@ EBIOS (_Expression des Besoins et Identification des Objectifs de Sécurité_) i
 
 In order to understand the EBIOS methodology, we are going to perform a risk 
 analysis on the following subject: _Your Digital Life_. 
-
-
-
-
